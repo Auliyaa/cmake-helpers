@@ -11,7 +11,8 @@ macro(cmake_setup_default_project)
   # install paths
   # --------------------------------------
   if(WIN32)
-    include(cmake/W32InstallDirs.cmake)
+    # override some definitions for windows, used before including GNUInstallDirs module
+    set(CMAKE_INSTALL_LIBDIR bin)
   endif(WIN32)
   include(GNUInstallDirs)
 
